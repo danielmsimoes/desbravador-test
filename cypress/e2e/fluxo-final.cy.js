@@ -19,7 +19,7 @@ describe('Fluxo completo de uma reserva', () => {
         cy.get('.largura_site > .cx').click()
         cy.get('.cadeado_aberto').should('be.visible')
     })
-    it('Fluxo completo com os parâmetros conforme descrito no email', () => {
+    it('Fluxo completo', () => {
         // Selecionar data válida
         cy.get(':nth-child(1) > .datepickerViewDays > .datepickerDays > :nth-child(3) > :nth-child(4) > a').click()
         cy.get(':nth-child(1) > .datepickerViewDays > .datepickerDays > :nth-child(4) > :nth-child(2) > a').click()
