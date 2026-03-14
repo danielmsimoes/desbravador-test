@@ -40,22 +40,39 @@ npm test
 desbravador-tests/
 ├─ cypress/
 │  ├─ e2e/
-│  │  └─ pagina-login.cy.js   # Teste E2E do fluxo de login
+│  │  ├─ busca-hospedagem.cy.js      # Teste E2E da busca de hospedagem
+│  │  ├─ fluxo-final.cy.js           # Teste E2E do fluxo final de reserva
+│  │  ├─ fluxo-principal.cy.js       # Teste E2E do fluxo principal
+│  │  ├─ pagina-login.cy.js          # Teste E2E do fluxo de login
+│  │  └─ features/
+│  │     ├─ busca-hospedagem.feature # Cenário BDD Gherkin da busca de hospedagem
+│  │     ├─ fluxo-final.feature      # Cenário BDD Gherkin do fluxo final
+│  │     ├─ fluxo-principal.feature  # Cenário BDD Gherkin do fluxo principal
+│  │     └─ pagina-login.feature     # Cenário BDD Gherkin do login
 │  ├─ fixtures/
-│  │  └─ example.json         # Fixture de exemplo gerada pelo Cypress
+│  │  └─ example.json                # Fixture de exemplo gerada pelo Cypress
+│  ├─ videos/                        # Vídeos gerados na execução dos testes
 │  └─ support/
-│     ├─ commands.js          # Arquivo para comandos customizados
-│     └─ e2e.js               # Configuracoes globais carregadas antes dos testes
-├─ cypress.config.js          # Arquivo principal de configuracao do Cypress
-├─ package.json               # Dependencias e metadados do projeto
-├─ package-lock.json          # Controle de versoes exatas das dependencias
-└─ .gitignore                 # Arquivos e pastas ignorados pelo Git
+│     ├─ commands.js                 # Arquivo para comandos customizados
+│     └─ e2e.js                      # Configuracoes globais carregadas antes dos testes
+├─ cypress.config.js                 # Arquivo principal de configuracao do Cypress
+├─ package.json                      # Dependencias e metadados do projeto
+├─ package-lock.json                 # Controle de versoes exatas das dependencias
+└─ .gitignore                        # Arquivos e pastas ignorados pelo Git
 ```
 
 ## Breve explicação dos testes
 
 ### e2e
 `cypress/e2e/pagina-login.cy.js` contém o cenário automatizado de login. O teste valida o acesso à página e o comportamento do sistema ao tentar autenticar o usuário, cobrindo tanto o cenário de sucesso quanto o de erro no login.
+
+`cypress/e2e/busca-hospedagem.cy.js` valida o fluxo de busca de hospedagem, garantindo que a pesquisa de disponibilidade funcione conforme esperado.
+
+`cypress/e2e/fluxo-principal.cy.js` cobre o fluxo principal da reserva, validando as etapas centrais da jornada do usuário. Com os parâmetros passado no email
+
+`cypress/e2e/fluxo-final.cy.js` valida a etapa final do fluxo, verificando o comportamento do sistema na conclusão da jornada testada.
+
+Todos os testes possuem um vídeo gerado em `cypress/videos` e uma feature correspondente em `cypress/e2e/features`, escrita no padrão BDD Gherkin.
 
 ## Cenário de testes
 ---
